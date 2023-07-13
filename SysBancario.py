@@ -24,12 +24,13 @@ while True:
 
     elif opcao == 2:
         valor_sacado = float(input('Insira o valor a sacar: '))
-        saldo_restante = saldo - valor_sacado
-        saldo = saldo_restante
-        n_saques += 1
+        
         if n_saques >= LIMITE_SAQUE and limite >= 500 or valor_sacado > 500:
             print('O limite diário de saques foi atingido!!! / O valor limite foi atingido!!! / Saque além do limite permitido!!!')
         else:
+            saldo_restante = saldo - valor_sacado
+            saldo = saldo_restante
+            n_saques += 1
             print(f'''
             Valor sacado: R$ {valor_sacado}
             Saldo restante:R$ {saldo_restante} ''')
